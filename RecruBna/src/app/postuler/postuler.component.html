@@ -1,0 +1,335 @@
+<h4 >Bienvenue</h4>
+<form [formGroup]="form" (ngSubmit)="onSubmit()" >
+  <div>
+      <div class="form-row">
+        <!-- CIN -->
+        <div class="col-md-4 mb-3">
+        <label for="cin">CIN</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          id="cin" 
+          formControlName="cin" 
+          [ngClass]="{'is-valid': cinControl?.valid && (cinControl?.dirty || cinControl?.touched), 'is-invalid': cinControl?.invalid && (cinControl?.dirty || cinControl?.touched)}"
+          required
+        >
+        <div *ngIf="cinControl?.invalid && (cinControl?.dirty || cinControl?.touched)" class="invalid-feedback">
+          <div *ngIf="cinControl?.errors?.['required']">This field is required.</div>
+          <div *ngIf="cinControl?.errors?.['pattern']">Please enter a valid CIN (8 digits).</div>
+        </div>
+        <div *ngIf="cinControl?.valid && (cinControl?.dirty || cinControl?.touched)" class="valid-feedback">
+          Looks good!
+        </div>
+        </div> 
+
+        <!-- NAMEEEE -->
+        <div class="col-md-4 mb-3">
+          <label for="nom">Nom</label>
+          <input 
+            type="text" 
+            class="form-control" 
+            id="nom" 
+            formControlName="nom" 
+            [ngClass]="{'is-valid': nomControl?.valid && (nomControl?.dirty || nomControl?.touched), 'is-invalid': nomControl?.invalid && (nomControl?.dirty || nomControl?.touched)}"
+            required
+          >
+          <div *ngIf="nomControl?.invalid && (nomControl?.dirty || nomControl?.touched)" class="invalid-feedback">
+            <div *ngIf="nomControl?.errors?.['required']">This field is required.</div>
+            <div *ngIf="nomControl?.errors?.['pattern']">Please enter a valid name (letters and spaces only).</div>
+          </div>
+          <div *ngIf="nomControl?.valid && (nomControl?.dirty || nomControl?.touched)" class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+
+        <!-- PRENOMMM -->
+        <div class="col-md-4 mb-3">
+          <label for="nom">Prenom</label>
+          <input 
+            type="text" 
+            class="form-control" 
+            id="prenom" 
+            formControlName="prenom" 
+            [ngClass]="{'is-valid': prenomControl?.valid && (prenomControl?.dirty || prenomControl?.touched),
+             'is-invalid': prenomControl?.invalid && (prenomControl?.dirty || prenomControl?.touched)}"
+            required
+          >
+          <div *ngIf="prenomControl?.invalid && (prenomControl?.dirty || prenomControl?.touched)" class="invalid-feedback">
+            <div *ngIf="prenomControl?.errors?.['required']">This field is required.</div>
+            <div *ngIf="prenomControl?.errors?.['pattern']">Please enter a valid name (letters and spaces only).</div>
+          </div>
+          <div *ngIf="prenomControl?.valid && (prenomControl?.dirty || prenomControl?.touched)" class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DATE DE NAISSS -->
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="dateDeNaissance">Date de Naissance</label>
+<input 
+  type="date" 
+  class="form-control" 
+  id="dateDeNaissance" 
+  formControlName="dateDeNaissance" 
+  [ngClass]="{'is-valid': dateDeNaissanceControl?.valid && (dateDeNaissanceControl?.dirty || dateDeNaissanceControl?.touched), 
+  'is-invalid': dateDeNaissanceControl?.invalid && (dateDeNaissanceControl?.dirty || dateDeNaissanceControl?.touched)
+
+  }"
+  required
+>
+<div *ngIf="dateDeNaissanceControl?.invalid && (dateDeNaissanceControl?.dirty || dateDeNaissanceControl?.touched)" class="invalid-feedback">
+  <div *ngIf="dateDeNaissanceControl?.errors?.['required']">This field is required.</div>
+  <div *ngIf="dateDeNaissanceControl?.errors?.['dateBefore']">Date must be more than 18 years old.</div>
+</div>
+<div *ngIf="dateDeNaissanceControl?.valid && (dateDeNaissanceControl?.dirty || dateDeNaissanceControl?.touched)" class="valid-feedback">
+  Looks good!
+</div>
+      </div>
+
+      <!-- TELEPHONEEE -->
+
+      <div class="col-md-4 mb-3">
+        <label for="telephone">Telephone</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          id="telephone" 
+          formControlName="telephone" 
+          [ngClass]="{
+            'is-valid': telephoneControl.valid && (telephoneControl.dirty || telephoneControl.touched),
+            'is-invalid': telephoneControl.invalid && (telephoneControl.dirty || telephoneControl.touched)
+          }"
+          required
+        >
+        <div *ngIf="telephoneControl.invalid && (telephoneControl.dirty || telephoneControl.touched)" class="invalid-feedback">
+          <div *ngIf="telephoneControl.errors?.['required']">This field is required.</div>
+          <div *ngIf="telephoneControl.errors?.['pattern']">Telephone must contain exactly 8 digits.</div>
+        </div>
+        <div *ngIf="telephoneControl.valid && (telephoneControl.dirty || telephoneControl.touched)" class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      
+      <!-- Mail -->
+      <div class="col-md-4 mb-3">
+        <label for="email">Email</label>
+        <input 
+          type="email" 
+          class="form-control" 
+          id="email" 
+          formControlName="email" 
+          [ngClass]="{
+            'is-valid': emailControl.valid && (emailControl.dirty || emailControl.touched),
+            'is-invalid': emailControl.invalid && (emailControl.dirty || emailControl.touched)
+          }"
+          required
+        >
+        <div *ngIf="emailControl.invalid && (emailControl.dirty || emailControl.touched)" class="invalid-feedback">
+          <div *ngIf="emailControl.errors?.['required']">This field is required.</div>
+          <div *ngIf="emailControl.errors?.['email']">Invalid email format.</div>
+        </div>
+        <div *ngIf="emailControl.valid && (emailControl.dirty || emailControl.touched)" class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      
+
+    </div>
+    
+    <!-- CONFIRAMTION MAILLL -->
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="confirmationEmail">Confirmation E-Mail</label>
+        <input
+          type="email"
+          class="form-control"
+          id="confirmationEmail"
+          formControlName="confirmationEmail"
+          [ngClass]="{
+            'is-valid': confirmationEmailControl?.valid && (confirmationEmailControl?.dirty || confirmationEmailControl?.touched)  && !this.form.errors?.['emailsMismatch'],
+            'is-invalid': confirmationEmailControl?.invalid && (confirmationEmailControl?.dirty || confirmationEmailControl?.touched) || this.form.errors?.['emailsMismatch']
+          }"
+          required
+        >
+      
+        <!-- Validation messages for confirmationEmail -->
+        <div *ngIf="confirmationEmailControl?.invalid && (confirmationEmailControl?.dirty || confirmationEmailControl?.touched)" class="invalid-feedback">
+          <!-- Display specific error messages -->
+          <div *ngIf="confirmationEmailControl?.errors?.['required']">Confirmation email is required.</div>
+          <div *ngIf="confirmationEmailControl?.errors?.['email']">Invalid email format.</div>
+        </div>
+      
+        <!-- Custom validation for email mismatch -->
+        <div *ngIf="form.errors?.['emailsMismatch'] && (confirmationEmailControl?.dirty || confirmationEmailControl?.touched)" class="invalid-feedback">
+          Emails must match.
+        </div>
+      
+        <!-- Valid feedback for confirmationEmail -->
+        <div *ngIf="confirmationEmailControl?.valid && (confirmationEmailControl?.dirty || confirmationEmailControl?.touched) && !this.form.errors?.['emailsMismatch']" class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      
+      
+      
+      
+
+      <!-- DIPLOMEEE -->
+      <div class="col-md-4 mb-3">
+        <label for="diplome">Diplome</label>
+        <select 
+          class="form-control" 
+          id="diplome" 
+          formControlName="diplome" 
+          [ngClass]="{
+            'is-valid': diplomeControl.valid && (diplomeControl.dirty || diplomeControl.touched),
+            'is-invalid': diplomeControl.invalid && (diplomeControl.dirty || diplomeControl.touched)
+          }"
+          required
+        >
+          <option value="">Select a Diplome</option>
+          <option value="diplome1">Master...</option>
+          <option value="diplome2">Bac...</option>
+          <!-- Add more options as needed -->
+        </select>
+        <div *ngIf="diplomeControl.invalid && (diplomeControl.dirty || diplomeControl.touched)" class="invalid-feedback">
+          <div *ngIf="diplomeControl.errors?.['required']">This field is required.</div>
+        </div>
+        <div *ngIf="diplomeControl.valid && (diplomeControl.dirty || diplomeControl.touched)" class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-3">
+        <label for="dateObtentionDiplome">Date Obtention Diplôme</label>
+        <input 
+        type="date" 
+        class="form-control" 
+        id="dateObtentionDiplome" 
+        formControlName="dateObtentionDiplome" 
+        [ngClass]="{
+          'is-valid': dateObtentionDiplomeControl && dateObtentionDiplomeControl.valid && (dateObtentionDiplomeControl.dirty || dateObtentionDiplomeControl.touched),
+          'is-invalid': dateObtentionDiplomeControl && dateObtentionDiplomeControl.invalid && (dateObtentionDiplomeControl.dirty || dateObtentionDiplomeControl.touched)
+        }" 
+        required
+      >
+      
+      <div 
+      *ngIf="dateObtentionDiplomeControl && dateObtentionDiplomeControl.valid && (dateObtentionDiplomeControl.dirty || dateObtentionDiplomeControl.touched)" 
+      class="valid-feedback">
+      Looks good!
+    </div>
+    <div 
+      *ngIf="dateObtentionDiplomeControl && dateObtentionDiplomeControl.invalid && (dateObtentionDiplomeControl.dirty || dateObtentionDiplomeControl.touched)" 
+      class="invalid-feedback">
+      <div *ngIf="dateObtentionDiplomeControl.errors?.['required']">This field is required..</div>
+      <div *ngIf="dateObtentionDiplomeControl?.errors?.['futureDate']">The date cannot be in the future.</div>
+    </div>    
+      </div>
+    </div>
+
+    <!-- MG BAC -->
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="validationServer01">Moyenne générale du bac</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          id="validationServer01" 
+          formControlName="moyenneGeneraleBac" 
+          [ngClass]="{
+            'is-valid': moyenneGeneraleBacControl?.valid && (moyenneGeneraleBacControl?.dirty || moyenneGeneraleBacControl?.touched), 
+            'is-invalid': moyenneGeneraleBacControl?.invalid && (moyenneGeneraleBacControl?.dirty || moyenneGeneraleBacControl?.touched)
+          }"
+          required
+        >
+        <div *ngIf="moyenneGeneraleBacControl?.invalid && (moyenneGeneraleBacControl?.dirty || moyenneGeneraleBacControl?.touched)" class="invalid-feedback">
+          <div *ngIf="moyenneGeneraleBacControl?.errors?.['required']">This field is required.</div>
+          <div *ngIf="moyenneGeneraleBacControl?.errors?.['invalidNumber']">Moyenne must be a valid number.</div>
+          <div *ngIf="moyenneGeneraleBacControl?.errors?.['negativeNumber']">Moyenne must not be negative.</div>
+          <div *ngIf="moyenneGeneraleBacControl?.errors?.['maxMoyenne']">Moyenne must be less than or equal to 20.</div>
+        </div>
+        <div *ngIf="moyenneGeneraleBacControl?.valid && (moyenneGeneraleBacControl?.dirty || moyenneGeneraleBacControl?.touched)" class="valid-feedback">
+          Looks good!
+        </div>
+      
+      </div>
+
+      <!-- MG DIPLOME -->
+      <div class="col-md-6 mb-3">
+        <label for="validationServer02">Moyenne générale du diplôme</label>
+        <input 
+          type="text" 
+          class="form-control" 
+          id="validationServer02" 
+          formControlName="moyenneGeneraleDiplome" 
+          [ngClass]="{
+            'is-valid': moyenneGeneraleDiplomeControl?.valid && (moyenneGeneraleDiplomeControl?.dirty || moyenneGeneraleDiplomeControl?.touched), 
+            'is-invalid': moyenneGeneraleDiplomeControl?.invalid && (moyenneGeneraleDiplomeControl?.dirty || moyenneGeneraleDiplomeControl?.touched)
+          }"
+          required
+        >
+        <div *ngIf="moyenneGeneraleDiplomeControl?.invalid && (moyenneGeneraleDiplomeControl?.dirty || moyenneGeneraleDiplomeControl?.touched)" class="invalid-feedback">
+          <div *ngIf="moyenneGeneraleDiplomeControl?.errors?.['required']">This field is required.</div>
+          <div *ngIf="moyenneGeneraleDiplomeControl?.errors?.['invalidNumber']">Moyenne must be a valid number.</div>
+          <div *ngIf="moyenneGeneraleDiplomeControl?.errors?.['negativeNumber']">Moyenne must not be negative.</div>
+          <div *ngIf="moyenneGeneraleDiplomeControl?.errors?.['maxMoyenne']">Moyenne must be less than or equal to 20.</div>
+        </div>
+        <div *ngIf="moyenneGeneraleDiplomeControl?.valid && (moyenneGeneraleDiplomeControl?.dirty || moyenneGeneraleDiplomeControl?.touched)" class="valid-feedback">
+          Looks good!
+        </div>
+      </div>      
+      </div>
+
+    <div class="form-row">
+
+      <!-- ANCIENNETE PRO -->
+      <div class="col-md-12 mb-3">
+        <label for="ancienneteProfessionelle">Ancienneté Professionnelle</label>
+        <select 
+          class="form-control" 
+          id="ancienneteProfessionelle" 
+          formControlName="ancienneteProfessionelle"
+          [ngClass]="{'is-valid': ancienneteProfessionelleControl.valid && (ancienneteProfessionelleControl.dirty || ancienneteProfessionelleControl.touched),
+          'is-invalid': ancienneteProfessionelleControl.invalid && (ancienneteProfessionelleControl.dirty || ancienneteProfessionelleControl.touched)}"
+          required
+        >
+        <option value="">Select </option>
+        <option>0 mois</option>
+          <option>1 mois</option>
+          <option>2 mois</option>
+          <option>3 mois</option>
+          <option>4 mois</option>
+          <option>5 mois</option>
+          <option>6 mois</option>
+          <option>7 mois</option>
+          <option>8 mois</option>
+          <option>9 mois</option>
+          <option>10 mois</option>
+          <option>11 mois</option>
+          <option>12 mois</option>
+        </select>
+<div *ngIf="ancienneteProfessionelleControl.invalid && (ancienneteProfessionelleControl.dirty || diplomeControl.touched)" class="invalid-feedback">
+          <div *ngIf="diplomeControl.errors?.['required']">This field is required.</div>
+        </div>
+          <div *ngIf="ancienneteProfessionelleControl.valid && (ancienneteProfessionelleControl.dirty || ancienneteProfessionelleControl.touched)" class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="text-center mt-5">
+      <button class="btn btn-custom btn-spacing" type="submit" [disabled]="form.invalid">
+        Postuler
+      </button>
+      
+      <button class="btn btn-secondary" type="reset">
+        Annuler
+      </button>
+    </div>
+     
+  </form>

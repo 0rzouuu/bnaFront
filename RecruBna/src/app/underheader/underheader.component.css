@@ -1,0 +1,56 @@
+.wrapper {
+    display: flex;
+    align-items: flex-start;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.image-container {
+    margin-right: 80px;
+}
+
+.image {
+    width: 500px;
+    height: 600px;
+    border-radius: 12px;
+}
+
+.text-container {
+    margin-top: 150px;
+    flex: 1;
+    background-color: #ecf0f1;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    line-height: 1.5;
+}
+
+/* Updated h1 styling */
+.text-container h1 {
+    font-size: 28px;                      /* Larger font size for more impact */
+    color: #fff;                          /* White color to contrast with the background */
+    background: linear-gradient(135deg, #000000, #73dcb0); /* Gradient for a dynamic look */
+    padding: 10px 20px;                   /* Padding around the text */
+    border-radius: 10px;                  /* Rounded corners */
+    text-transform: uppercase;            /* Make text uppercase for emphasis */
+    letter-spacing: 1px;                  /* Letter spacing for a modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slight shadow for depth */
+    text-align: center;                   /* Center-align the text */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+    margin-bottom: 30px;                  /* Space below the heading */
+}
+
+/* Paragraph styling */
+.text-container p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.text {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}

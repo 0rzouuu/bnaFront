@@ -1,0 +1,59 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.main-heading {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #16a085;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.container-poste {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ecf0f1; 
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading Styles */
+h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #34495e;
+}
+
+h4 {
+    font-size: 25px;
+    margin-bottom: 4px;
+    color: #16a085;
+}
+
+/* Position Info */
+.position-info p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #7f8c8d;
+}
+
+/* Diploma List */
+.diplomas ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.diplomas ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+
